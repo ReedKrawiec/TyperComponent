@@ -26,7 +26,7 @@ class Typer extends React.Component<TyperProps,TyperState>{
       if(current_word_index === -1){
         clearInterval(timerInterval);
         current_word_index = 0;
-        finished_timer_ref = setInterval(word_writer,100);
+        finished_timer_ref = setInterval(word_writer,200);
       } 
       else{
         this.setState({word:this_.state.word.substring(0,current_word_index)});
@@ -44,7 +44,7 @@ class Typer extends React.Component<TyperProps,TyperState>{
         current_word_index++;
       }
     }
-    let timerInterval =  setInterval(word_remove,50);
+    let timerInterval =  setInterval(word_remove,100);
   }
   render(){
     return(<span>{this.state.word}</span>)
